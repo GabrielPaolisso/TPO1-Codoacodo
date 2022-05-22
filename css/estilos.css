@@ -70,7 +70,6 @@ header .container {
 
 header .logo-img {
     height: 75px;
-    margin-right: 10px;
 
 }
 
@@ -351,8 +350,11 @@ color:white;
  }
 
 
-
-
+/*Comienza-----------------------------------------------------------------------------------------------------------*/
+.whsp-email{
+    background-color:#fff;
+    padding: 4px 0px
+}
 
 
 
