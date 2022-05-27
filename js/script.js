@@ -1,11 +1,36 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
+var nombre = document.getElementById('nombre');
+var apellido = document.getElementById('apellido');
+var error = document.getElementById('error')
 
-const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letrasyespacios,pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letrasyespacios,pueden llevar acentos.
-    empresa: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letrasyespacios,pueden llevar acentos.
-    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/ //7a14 numeros.
+function enviarFormulario(){
+    console.log('Enviando formulario ...');
+
+    var mensajesError = [];
+
+    if(nombre.value === null || nombre.value === ''){
+        mensajesError.push('Ingresa tu nombre');
     }
-    
+
+    if(apellido.value === null || apellido.value === ''){
+        mensajesError.push('Ingresa tu apellido');
+    }
+
+    if(empresa.value === null || empresa.value === ''){
+        mensajesError.push('Ingresa tu empresa');
+    }
+
+    if(email.value === null || email.value === ''){
+        mensajesError.push('Ingresa tu email');
+    }
+    if(celular.value === null || celular.value === ''){
+        mensajesError.push('Ingresa tu celular');
+    }
+
+    if(consulta.value === null || consulta.value === ''){
+        mensajesError.push('Ingresa tu consulta');
+    }
+
+        error.innerHTML = mensajesError.join(', ');
+
+    return false;
+}

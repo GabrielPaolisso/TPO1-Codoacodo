@@ -179,6 +179,7 @@ color:rgb(255,255,255);
     rgba(0, 0, 0, 0.5)),url(/imgs/TorreBBVA.jpg);
 }
 
+
 .pie-pagina{
     width: 100%;
     background-color: rgb(233, 232, 232);
@@ -235,19 +236,22 @@ color:rgb(255,255,255);
     padding: 25px 0px;
 }
 
-#donde-estamos h3 {
+.estamos-aqui {
+    display: grid;
+    gap: 20px;
+
+}
+#cont h1,
+#donde-estamos h1 {
+    font-size: 2.2em;    
+}
+#cont h2,
+#donde-estamos h2 {
     font-size: 1.4em;
     padding: 25px 0px;    
 }
-
-.estamos-aqui {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.estamos-aqui h1 {
-    grid-column: span 2;
+.mapa {
+    width: 100%;
 }
 /*Comienza Contacto-------------------------------------------------------------------------------------------------------------------------------------------------*/
 #donde-estamos,
@@ -258,18 +262,8 @@ color:rgb(255,255,255);
     padding: 40px 10px
 }
 
-#cont h1{
-    padding: 25px 0px;
-}
-
-#cont h3 {
-    font-size: 1.4em;
-    padding: 25px 0px;    
-}
-
 .formulario {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
     
 }
@@ -299,10 +293,7 @@ color:rgb(255,255,255);
 }
 
 
-.formulario__grupo-consulta,
-.formulario__grupo-boton-enviar{
-    grid-column: span 2;
-}
+
  
 .formulario__grupo-consulta,
 .formulario__grupo-boton-enviar {
@@ -314,42 +305,34 @@ color:rgb(255,255,255);
 .formulario__boton {
     height: 45px;
     line-height: 45px;
-    width: 35%;
+    width: 100%;
     background-color: rgb(66, 19, 177);
     color: rgb(255,255,255);
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     transition: .5s ease all;
+    cursor: pointer;
+
 }
 
 .formulario__boton:hover {
     box-shadow: 3px 0px 30px rgb(133, 92, 182);
 }
 
-.formulario__mensaje-exito {
-    font-size: 14px;
-    color:#09a846;
-    display: none;
-}
+textarea {
+    margin:10px;
+    border:none;
+    resize:none;
+    width:100%;
+    }
 
-.formulario__mensaje-exito-activo {
-    display: block;
-}
-
-
-
-
-.formulario__grupo-incorrecto .formulario__label{
-    color: #bb2929;
- }
-
- .formulario__grupo-incorrecto .formulario__input{
-    border: 3px solid #bb2929;
- }
-
-
+    #error {
+        background-color:rgba(0, 0, 0, 0.2);
+        margin: 15px;
+        font-size: 2em;
+        color: rgb(185, 9, 9)
+    }
 /*-----------------------------------------------------------------------------------------------------------*/
 .whsp-email{
     background-color:#fff;
@@ -404,6 +387,13 @@ color:rgb(255,255,255);
     #empresa .capacidad p {
         color: #fff;
     }
+
+    .formulario__grupo-consulta,
+    .formulario__grupo-boton-enviar{
+    grid-column: span 2;
+}
+    .formulario {
+        grid-template-columns: 1fr 1fr;
 }
 
     
@@ -444,6 +434,25 @@ color:rgb(255,255,255);
         height: 93vh;
 
     }
+    #banner h1 {
+        animation-name: animacion;   
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes animacion {
+        
+        0%{
+            transform: scale(0.3);
+        }
+        50%{
+            transform: scale(2.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+
+    }
 
     #empresa .container {
         width: 100%;
@@ -482,140 +491,48 @@ color:rgb(255,255,255);
     #empresa .capacidad p {
         color: #fff
     }
-}
 
-/* #empresa .text {
-        background-color:#186d6d;
 
-    }*/
-
-.pie-pagina .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0px;
-    padding: 0px;
-}
-
-.pie-pagina .container .box figure img {
-    width: 150px;
-    padding: 0px;
-}
-
-.pie-pagina .container .redes-sociales a {
-    display: inline-bloc;
-    text-decoration: none;
-    color: black;
-    width: 65px;
-    height: 65px;
-    font-size: 50px;
-    padding: 50px;
-}
-
-/*esto se coloca para quitar lo que trae por defecto
-footer{
-    background-color: rgb(230, 230, 230);
-padding: 50px;
-}
-
-footer .container{
-    height: 200px;
-    display: flex;
-    justify-content:center;
-    align-items: flex-end;
-}*/
-/*header {
-    display: flex;
-    background-color: rgb(95, 158, 160);
-    min-height: 100px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    position: fixed;
-    margin-top: -100px;
-}
-
-.container {
-    display: flex;
-    align-items: center
-}
-
-.logo-img {
-    height: 75px;
-    margin-right: 10px;
-
-}
-
-a {
-    text-decoration: none;
-    /*quita la letra azul subrayada de los hipervinculos*/
-/*  color: black;
-}
-
-nav a {
-    font-weight: 700;
-    padding: 7px
-}
-
-nav a:hover {
-    color: #3E67E9;
-}
-@media (max-width:914px){
-    header {
-        flex-direction:column;
+    .pie-pagina .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0px;
+        padding: 0px;
     }
-    nav {
-        padding: 10px 0px;
-    }
-}
-@media (max-width:667px){
     
+    .pie-pagina .container .box figure img {
+        width: 150px;
+        padding: 0px;
+    }
+    
+    .pie-pagina .container .redes-sociales a {
+        display: inline-bloc;
+        text-decoration: none;
+        color: black;
+        width: 65px;
+        height: 65px;
+        font-size: 50px;
+        padding: 50px;
+    }
+
+
+    .estamos-aqui {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .estamos-aqui h1 {
+        grid-column: span 2;
+    }
+    #cont h1,
+    #donde-estamos h1 {
+        font-size: 3.5em;    
+    }
+    #cont h2,
+    #donde-estamos h2 {
+        font-size: 1.7em;
 }
 
-.Leed {
-    border: 2px solid black;
-    background-color: aliceblue;
-    margin: 60px;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0px 0px 10px 10px gray;
 
 }
-
-.leed-img {
-    height: 200px;
-    margin: auto;
-}
-
-input::selection {
-    color:bisque;
-    background-color: aquamarine;
-}
-main h1 {
-    width: 100%;
-    height: 300px;
-    margin: auto;
-    font-size: 50px;
-    background-image: url(/imgs/lampara-enchufe.jpg);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-*/
-/*background-color: black;*/
-
-
-/*
-body{
-    font-family: 
-}
-  font-family: 'Open Sans', sans-serif;
- font-family: 'Libre Baskerville', serif;  
- font-family: 'Roboto Mono', monospace;
-    background: url(/imgs/fondo-azul.jpg);
-    background-size: 100%;  */
